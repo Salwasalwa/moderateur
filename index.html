@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Titre de la page</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <form>
+        <textarea name="Message" id="textarea" value=""></textarea>
+        <button type="button" name="button" onclick="moderate(this)">Modérer</button>
+        <div id="reponse">
+
+        </div>
+    </form>
+  </body>
+  <script>
+      var textareaElement = document.getElementById("textarea");
+        var reponseElement = document.getElementById("reponse");
+
+      function moderate() {
+          var valueTextarea = textareaElement.value;
+
+            var moderateValueTextarea = valueTextarea.replace(/:\)|:D|:'\)/g, "--");
+            reponseElement.innerHTML = moderateValueTextarea;
+
+      }
+  </script>
+</html>
